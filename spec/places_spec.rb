@@ -23,3 +23,11 @@ require('places')
       expect(Place.all()).to(eq([test_location]))
     end
   end
+
+  describe(".clear") do
+    it("empties all saved places") do
+      Place.new("New York").save()
+      Place.clear()
+      expect(Place.all()).to(eq([]))
+    end
+  end
